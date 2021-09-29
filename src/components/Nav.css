@@ -26,3 +26,8 @@
   border-radius: 20px;
   background-color: rgb(196, 196, 196)
 }
+
+.searchBtn {
+  border: 0;
+  background-color: transparent;
+}

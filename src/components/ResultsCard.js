@@ -1,20 +1,14 @@
 import React from 'react';
 
 import MusicCard from './MusicCard';
-import './ResultsCard.css'
+import './ResultsCard.css';
 
-export default function ResultsCard({ search = "Recent"}) {
+export default function ResultsCard({ search }) {
   return (
     <div className="results-card">
-      <h1>{search}</h1>
+      <h1>{search ? search[0].trackName : 'Nada :('}</h1>
       <ul>
-        <li><MusicCard /></li>
-        <li><MusicCard /></li>
-        <li><MusicCard /></li>
-        <li><MusicCard /></li>
-        <li><MusicCard /></li>
-        <li><MusicCard /></li>
-        <li><MusicCard /></li>
+        {search ? search.map((i) => <li><MusicCard key={i.trackId} artist={i.artistName} album={i.collectionName} image={i.artworkUrl100}/></li>) : ''}
       </ul>
     </div>
   )
