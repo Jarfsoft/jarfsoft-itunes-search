@@ -7,6 +7,7 @@
 .nav ul {
   width: 80%;
   margin: 0 auto;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   list-style-type: none;
