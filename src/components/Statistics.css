@@ -1,0 +1,18 @@
+.statistics {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.statistics ol {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: auto;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0.2rem 0;
+  list-style-position: inside;
+}
+
+.statistics .vis-network {
+  margin: 0 auto;
+}

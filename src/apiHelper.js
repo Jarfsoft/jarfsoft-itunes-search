@@ -6,7 +6,7 @@ const getContent = (search, sendData) => {
     .then(results => results.json())
     .then(data => {
       sendData(data.results);
-    }) ;
+    });
 };
 
 export default getContent;

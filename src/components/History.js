@@ -10,7 +10,7 @@ export default function History() {
     <div className="history">
       <h1>History</h1>
       <ol>
-        {list && list.length !== 0 ? list.map((i) => <li><MusicCard key={i.id} artist={i.artist} album={i.album} image={i.image} id={i.id}/></li>) : ''}
+        {list && list.length !== 0 ? list.map((i) => <li><MusicCard key={i.id} artist={i.artist} album={i.album} image={i.image} id={i.id}/></li>) : <h1>Give a Like to a song from your searches.</h1>}
       </ol>
     </div>
   )
