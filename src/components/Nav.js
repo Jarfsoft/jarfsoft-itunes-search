@@ -11,7 +11,7 @@ export default function Nav({ change }) {
     setSearch(e.target.value);
   };
   const clickHandler = () => {
-    getContent(search, change);
+    getContent(search.replace(/ /g, '+'), change);
   };
   return (
     <div className="nav">
