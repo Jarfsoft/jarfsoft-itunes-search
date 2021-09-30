@@ -1,0 +1,26 @@
+.history {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.history ol {
+  margin: 0;
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-template-rows: 13rem;
+}
+
+.history img {
+  border-radius: 5px;
+}
+
+.history ol h1 {
+  font-size: medium;
+  margin: 0.2rem 0;
+}
+
+.history p {
+  font-size: medium;
+  margin: 0.2rem 0;
+}

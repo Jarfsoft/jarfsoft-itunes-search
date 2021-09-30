@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import song from './song';
+import history from './history';
 
 const rootReducer = combineReducers({
-  song,
+  history,
 });
 
 export default rootReducer;
