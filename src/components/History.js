@@ -15,6 +15,7 @@ export default function History() {
             <li>
               <MusicCard
                 key={i.id}
+                song={i.song}
                 artist={i.artist}
                 album={i.album}
                 image={i.image}

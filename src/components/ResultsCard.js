@@ -13,6 +13,7 @@ export default function ResultsCard({ search }) {
             <li>
               <MusicCard
                 key={i.trackId}
+                song={i.trackName}
                 artist={i.artistName}
                 album={i.collectionName}
                 image={i.artworkUrl100}

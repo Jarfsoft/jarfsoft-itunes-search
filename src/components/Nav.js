@@ -25,7 +25,7 @@ export default function Nav({ change }) {
         </li>
         <li>
           <form onSubmit={clickHandler}>
-            <input type="text" value={search} onChange={handleChange} />
+            <input type="text" placeholder="Enter song name" value={search} onChange={handleChange} />
             <FontAwesomeIcon
               type="submit"
               className="icon"

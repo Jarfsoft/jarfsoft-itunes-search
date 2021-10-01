@@ -5,7 +5,7 @@ import { faThumbsUp, faThumbsDown } from "@fortawesome/free-solid-svg-icons";
 
 import actions from "../Actions/index";
 
-export default function MusicCard({ artist, album, image, id }) {
+export default function MusicCard({ song, artist, album, image, id }) {
   const dispatch = useDispatch();
 
   const list = useSelector((state) => state.history.list);
@@ -13,6 +13,7 @@ export default function MusicCard({ artist, album, image, id }) {
   const onClickLike = () => {
     dispatch(
       actions.add({
+        song: song,
         artist: artist,
         album: album,
         image: image,
@@ -45,6 +46,7 @@ export default function MusicCard({ artist, album, image, id }) {
       <img src={image} alt="img" />
       <h1>{artist.length > 10 ? artist.slice(0, 10) + "..." : artist}</h1>
       <p>{album.length > 10 ? album.slice(0, 10) + "..." : album}</p>
+      <p>{song.length > 10 ? song.slice(0, 10) + "..." : song}</p>
       {!like ? (
         <FontAwesomeIcon
           className="icon"
