@@ -1,8 +1,15 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import Graph from "react-vis-network-graph";
 
+import { getAlbums } from "../apiHelper";
+
 export default function ArtistGraph({ artist }) {
-  const albums = ["Album1", "Album2", "Album3", "Album4", "Album5"];
+  const [albums, setAlbums] = useState();
+
+  useEffect(() => {
+    getAlbums(artist, setAlbums);
+  }, [artist]);
+
   const graph = {
     nodes: [],
     edges: [],
@@ -14,18 +21,20 @@ export default function ArtistGraph({ artist }) {
     title: "Artist",
   });
 
-  for (let i = 0; i < albums.length; i++) {
-    graph.nodes.push({
-      id: i + 2,
-      label: albums[i],
-      title: "Album",
-    });
-
-    graph.edges.push({
-      from: 1,
-      to: i + 2,
-      length: 150,
-    });
+  if(albums) {
+    for (let i = 0; i < albums.length; i++) {
+      graph.nodes.push({
+        id: i + 2,
+        label: albums[i].collectionName,
+        title: "Album",
+      });
+  
+      graph.edges.push({
+        from: 1,
+        to: i + 2,
+        length: 100,
+      });
+    }
   }
 
   const options = {
@@ -36,18 +45,18 @@ export default function ArtistGraph({ artist }) {
     edges: {
       color: "#000000",
     },
-    height: "500px",
-    width: "500px",
+    height: "700px",
+    width: "900px",
     interaction: {
       dragNodes: false,
       dragView: false,
       zoomView: false,
     },
     nodes: {
-      size: 25,
+      size: 15,
 
       font: {
-        size: 23,
+        size: 7,
       },
       borderWidth: 2,
     },

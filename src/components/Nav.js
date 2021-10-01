@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import './Nav.css';
-import getContent from '../apiHelper';
+import { getContent } from '../apiHelper';
 
 export default function Nav({ change }) {
   const [search, setSearch] = useState();

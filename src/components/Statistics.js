@@ -1,4 +1,4 @@
-import { React } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 import ArtistGraph from "./ArtistGraph";
@@ -13,7 +13,7 @@ export default function Statistics() {
         {list.length !== 0 ? (
           list.slice(0, 5).map((a) => (
             <li>
-              <ArtistGraph artist={a.artist} />
+              <ArtistGraph key={a.artist} artist={a.artist} />
             </li>
           ))
         ) : (
