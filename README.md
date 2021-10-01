@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Itunes-Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Front-end application to navigate within the iTunes Store that includes a Like feature that will allow the user to save the searched music and show the history of the saved songs in the order in which they liked them. A top 5 of the most liked artists will be displayed with a graph showing the artist name in the middle node and the albums published in the surrounding nodes.
 
-## Available Scripts
+![screenshot](./screenshot.png)
 
-In the project directory, you can run:
+## Built
 
-### `yarn start`
+- Javascript
+- React
+- Redux
+- CSS
+- Vis-Network
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Live Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Live Demo]()
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `yarn build`
+To get a local copy up and running follow these simple example steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- A browser
+- Text Editor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
 
-### `yarn eject`
+**STEP 1**
+In the terminal, Run the following commands.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- `git clone https://github.com/Jarfsoft/jarfsoft-itunes-search`
+- `cd jarfsoft-itunes-search`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+OR
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Download the zip file form `https://github.com/Jarfsoft/jarfsoft-itunes-search`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**STEP 2**
 
-## Learn More
+- In the Terminal enter `cd jarfsoft-itunes-search`
+- Run `npm install`
+- Run `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Juan Andrés Raudales**
 
-### Code Splitting
+- GitHub: [@Jarfsoft](https://github.com/Jarfsoft)
+- Twitter: [@Jarfsoft](https://twitter.com/Jarfsoft)
+- LinkedIn: [Juan Andrés Raudales Flores](https://www.linkedin.com/in/juan-raudales-flores/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contributing
 
-### Analyzing the Bundle Size
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Feel free to check the [issues page](https://github.com/Jarfsoft/jarfsoft-itunes-search/issues).
 
-### Making a Progressive Web App
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Give a ⭐️ if you like this project!
 
-### Advanced Configuration
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.

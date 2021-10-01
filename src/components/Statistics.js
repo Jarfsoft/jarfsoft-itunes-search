@@ -8,7 +8,7 @@ export default function Statistics() {
   const list = useSelector((state) => state.favorites.list);
   return (
     <div className="statistics">
-      <h1>Statistics</h1>
+      <h1>Favorite Artists</h1>
       <ol>
         {list.length !== 0 ? (
           list.slice(0, 5).map((a) => (
