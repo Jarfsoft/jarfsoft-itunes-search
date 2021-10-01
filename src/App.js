@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 
 import Nav from "./components/Nav";
 import ResultsCard from "./components/ResultsCard";
@@ -9,13 +8,12 @@ import Statistics from "./components/Statistics";
 
 function App() {
   const [search, setSearch] = useState();
-  const list = useSelector((state) => state.favorites.list);
   return (
     <div className="App">
       <Nav change={setSearch} />
       <ResultsCard search={search} />
       <History />
-      <Statistics list={list}/>
+      <Statistics/>
     </div>
   );
 }

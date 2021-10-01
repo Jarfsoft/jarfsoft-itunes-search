@@ -3,32 +3,41 @@ const stateDefault = {
 };
 
 const favorites = (state = stateDefault, action) => {
-  const newState = { ...state };
+  const list = [...state.list];
   switch (action.type) {
     case "SUM":
-      for (let i in newState.list) {
-        if (i[0] === action.payload) {
-          i[1]++;
-          newState.list.sort((a, b) => a[1] - b[1]);
-          if (newState.list.length !== 1) newState.list.sort((a, b) => a[1] - b[1]);
-          return newState;
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].artist === action.payload) {
+          list[i].songs++;
+          if (list.length > 1) list.sort((a, b) => b.songs - a.songs);
+          return {
+            list: list,
+          };
         }
       }
-      newState.list.push([action.payload, 1]);
-      if (newState.list.length !== 1) newState.list.sort((a, b) => a[1] - b[1]);
-      console.log(newState.list[0][0] + " favorites");
-      return newState;
+      list.push({
+        artist: action.payload,
+        songs: 1,
+      });
+      if (list.length > 1) list.sort((a, b) => b.songs - a.songs);
+      return {
+        list: list,
+      };;
     case "SUB":
-      for (let i in newState.list) {
-        if (i[0] === action.payload) {
-          i[1]--;
-          if (newState.list.length !== 1) newState.list.sort((a, b) => a[1] - b[1]);
-          return newState;
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].artist === action.payload) {
+          list[i].songs--;
+          if (list.length > 1) list.sort((a, b) => b.songs - a.songs);
+          return {
+            list: list,
+          };
         }
       }
-      return newState;
+      return {
+        list: list,
+      };
     default:
-      return newState;
+      return state;
   }
 };
 
