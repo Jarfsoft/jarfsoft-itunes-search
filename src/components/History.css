@@ -3,11 +3,22 @@
   width: 80%;
 }
 
+@media (max-width: 700px) {
+  .history ol {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 701px) {
+  .history ol {
+    grid-template-columns: repeat(6, auto);
+  }
+}
+
 .history ol {
   margin: 0;
   padding: 3rem 0;
   display: grid;
-  grid-template-columns: repeat(6, auto);
   grid-template-rows: 13rem;
 }
 

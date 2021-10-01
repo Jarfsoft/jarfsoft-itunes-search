@@ -3,11 +3,22 @@
   width: 80%;
 }
 
+@media (min-width: 701px) {
+  .statistics ol {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .statistics ol {
+    font-size: 20px;
+  }
+}
+
 .statistics ol {
   padding: 3rem 0;
   display: grid;
   grid-template-columns: auto;
-  font-size: 50px;
   font-weight: bold;
   margin: 0.2rem 0;
   list-style-position: inside;

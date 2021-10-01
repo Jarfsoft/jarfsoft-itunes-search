@@ -21,6 +21,8 @@ export default function ArtistGraph({ artist }) {
     title: "Artist",
   });
 
+  const windowScreen = window.screen.width;
+
   if(albums) {
     for (let i = 0; i < albums.length; i++) {
       graph.nodes.push({
@@ -32,7 +34,7 @@ export default function ArtistGraph({ artist }) {
       graph.edges.push({
         from: 1,
         to: i + 2,
-        length: 250,
+        length: windowScreen >= 700 ? 250 : 80,
       });
     }
   }
@@ -45,8 +47,8 @@ export default function ArtistGraph({ artist }) {
     edges: {
       color: "#000000",
     },
-    height: "700px",
-    width: "900px",
+    height: windowScreen >= 700 ? "700px" : "300px",
+    width: "100%",
     interaction: {
       dragNodes: false,
       dragView: false,
@@ -56,7 +58,7 @@ export default function ArtistGraph({ artist }) {
       size: 15,
 
       font: {
-        size: 13,
+        size: windowScreen >= 700 ? 13 : 6,
       },
       borderWidth: 2,
     },
