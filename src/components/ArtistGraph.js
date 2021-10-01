@@ -32,7 +32,7 @@ export default function ArtistGraph({ artist }) {
       graph.edges.push({
         from: 1,
         to: i + 2,
-        length: 100,
+        length: 250,
       });
     }
   }
@@ -56,7 +56,7 @@ export default function ArtistGraph({ artist }) {
       size: 15,
 
       font: {
-        size: 7,
+        size: 13,
       },
       borderWidth: 2,
     },
