@@ -23,6 +23,11 @@
   list-style-type: none;
 }
 
+.results-card li {
+  height: 210px;
+  margin: 0 auto;
+}
+
 .results-card img {
   border-radius: 5px;
 }

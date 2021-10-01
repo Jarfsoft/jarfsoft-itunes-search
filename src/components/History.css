@@ -22,6 +22,11 @@
   grid-template-rows: 13rem;
 }
 
+.history li {
+  height: 210px;
+  margin: 0 auto;
+}
+
 .history img {
   border-radius: 5px;
 }
