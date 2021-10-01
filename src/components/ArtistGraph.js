@@ -1,30 +1,40 @@
 import React from "react";
 import Graph from "react-vis-network-graph";
- 
-export default function ArtistGraph() {
+
+export default function ArtistGraph({ artist }) {
+  const albums = ["Album1", "Album2", "Album3", "Album4", "Album5"];
   const graph = {
-    nodes: [
-      { id: 1, label: "Node 1", title: "node 1 tootip text" },
-      { id: 2, label: "Node 2", title: "node 2 tootip text" },
-      { id: 3, label: "Node 3", title: "node 3 tootip text" },
-      { id: 4, label: "Node 4", title: "node 4 tootip text" },
-      { id: 5, label: "Node 5", title: "node 5 tootip text" },
-    ],
-    edges: [
-      { from: 1, to: 2 },
-      { from: 3, to: 2 },
-      { from: 4, to: 2 },
-      { from: 5, to: 2 },
-    ]
+    nodes: [],
+    edges: [],
   };
- 
+
+  graph.nodes.push({
+    id: 1,
+    label: artist,
+    title: "Artist",
+  });
+
+  for (let i = 0; i < albums.length; i++) {
+    graph.nodes.push({
+      id: i + 2,
+      label: albums[i],
+      title: "Album",
+    });
+
+    graph.edges.push({
+      from: 1,
+      to: i + 2,
+      length: 150,
+    });
+  }
+
   const options = {
     autoResize: false,
     layout: {
-      hierarchical: false
+      hierarchical: false,
     },
     edges: {
-      color: "#000000"
+      color: "#000000",
     },
     height: "500px",
     width: "500px",
@@ -33,20 +43,15 @@ export default function ArtistGraph() {
       dragView: false,
       zoomView: false,
     },
-    nodes : {
-      size : 25,
+    nodes: {
+      size: 25,
 
-      font : {
-        size : 23,
+      font: {
+        size: 23,
       },
-      borderWidth : 2
+      borderWidth: 2,
     },
   };
- 
-  return (
-    <Graph
-      graph={graph}
-      options={options}
-    />
-  );
+
+  return <Graph graph={graph} options={options} />;
 }
