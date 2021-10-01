@@ -1,4 +1,4 @@
-# Itunes-Search
+# iTunes-Search
 
 > Front-end application to navigate within the iTunes Store that includes a Like feature that will allow the user to save the searched music and show the history of the saved songs in the order in which they liked them. A top 5 of the most liked artists will be displayed with a graph showing the artist name in the middle node and the albums published in the surrounding nodes.
 
@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo](jarfsoft-itunes-search.netlify.app)
+[Live Demo](https://jarfsoft-itunes-search.netlify.app/)
 
 
 ## Getting Started

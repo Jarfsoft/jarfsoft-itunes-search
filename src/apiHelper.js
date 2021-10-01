@@ -4,6 +4,7 @@ export const getContent = (search, sendData) => {
     term: search,
     media: "music",
     entity: "song",
+    attribute: 'songTerm',
     limit: 6,
   };
   url.search = new URLSearchParams(params);

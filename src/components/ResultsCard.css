@@ -41,3 +41,8 @@
   font-size: medium;
   margin: 0.2rem 0;
 }
+
+.no-results {
+  text-align: center;
+  margin: 9rem 0;
+}
