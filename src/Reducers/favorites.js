@@ -27,6 +27,7 @@ const favorites = (state = stateDefault, action) => {
       for (let i = 0; i < list.length; i++) {
         if (list[i].artist === action.payload) {
           list[i].songs--;
+          if(list[i].songs === 0) list.splice(i, 1);
           if (list.length > 1) list.sort((a, b) => b.songs - a.songs);
           return {
             list: list,
