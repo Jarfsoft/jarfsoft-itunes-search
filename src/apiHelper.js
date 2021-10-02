@@ -8,6 +8,7 @@ export const getContent = (search, sendData) => {
     limit: 6,
   };
   url.search = new URLSearchParams(params);
+  sendData('Loading');
   fetch(url, { method: "POST" })
     .then((results) => results.json())
     .then((data) => {

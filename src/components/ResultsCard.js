@@ -8,8 +8,12 @@ import "./ResultsCard.css";
 export default function ResultsCard({ search }) {
   return (
     <div className="results-card">
-      <h1>{search && search.length !== 0 ? search[0].trackName : "Music"}</h1>
-      {search && search.length !== 0 && (
+      <h1>
+        {search && search !== "Loading" && search.length !== 0
+          ? search[0].trackName
+          : "Music"}
+      </h1>
+      {search && search !== "Loading" && search.length !== 0 && (
         <ul>
           {search.map((i) => (
             <li>
@@ -26,7 +30,11 @@ export default function ResultsCard({ search }) {
         </ul>
       )}
       {search ? (
-        search.length === 0 && <h1 className="no-results">No results! :(</h1>
+        search.length === 0 ? (
+          <h1 className="no-results">No results! :(</h1>
+        ) : (
+          search === "Loading" && <div className="loading"></div>
+        )
       ) : (
         <div className="default-text">
           <h1>Do a music search in the Navigation bar.</h1>
