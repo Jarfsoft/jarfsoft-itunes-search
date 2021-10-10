@@ -1,15 +1,42 @@
-import React from "react";
+import { React, useState } from "react";
 import { useSelector } from "react-redux";
 
 import ArtistGraph from "./ArtistGraph";
+import ArtistsGraph from "./ArtistsGraph";
 import "./Statistics.css";
 
 export default function Statistics() {
   const list = useSelector((state) => state.favorites.list);
+  const [clicked, setClicked] = useState(false);
+  const clickHandler = () => {
+    setClicked(!clicked);
+  }
   return (
     <div className="statistics">
       <h1>Favorite Artists</h1>
-      <ol>
+      <div className="flex-slide">
+        <label className="switch">
+          <input type="checkbox" onClick={clickHandler}/>
+          <span className="slider round"></span>
+        </label>
+        <h1>1 Whole Graph</h1>
+      </div>
+      {clicked ? <div className="whole-graph">
+        <ol>
+        {list.length !== 0 ? (
+          list.slice(0, 5).map((a) => (
+            <li>
+              <p key={a.artist}>{a.artist}</p>
+            </li>
+          ))
+        ) : (
+          <h1 className="no-like">Most liked artists will be shown here.</h1>
+        )}
+      </ol>
+      {list.length !== 0 && <ArtistsGraph list={list} />}
+      </div> 
+      : 
+      <ol className="graph-list no-like">
         {list.length !== 0 ? (
           list.slice(0, 5).map((a) => (
             <li>
@@ -17,9 +44,9 @@ export default function Statistics() {
             </li>
           ))
         ) : (
-          <h1>Most liked artists will be shown here.</h1>
+          <h1 className="no-like">Most liked artists will be shown here.</h1>
         )}
-      </ol>
+      </ol>}
     </div>
   );
 }
