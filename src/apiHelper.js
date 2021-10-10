@@ -30,19 +30,3 @@ export const getAlbums = (artist, sendData) => {
       sendData(data.results.filter((a) => a.trackCount > 1));
     });
 };
-
-export const getArtistAlbums = (artists, artist, sendData) => {
-  const url = new URL("https://itunes.apple.com/search");
-  const params = {
-    term: artist,
-    media: "music",
-    entity: "album",
-  };
-  url.search = new URLSearchParams(params);
-  fetch(url, { method: "POST" })
-    .then((results) => results.json())
-    .then((data) => {
-      console.log(artists);
-      sendData([...artists, {artist: artist, albums: data.results.filter((a) => a.trackCount > 1)}]);
-    });
-};

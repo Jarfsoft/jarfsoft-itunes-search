@@ -1,17 +1,38 @@
 import { React, useState, useEffect } from "react";
 import Graph from "react-vis-network-graph";
 
-import { getArtistAlbums } from "../apiHelper";
+import { getAlbums } from "../apiHelper";
 
 export default function ArtistsGraph({ list }) {
-  const [artists, setArtists] = useState([]);
+  const [artist1, setArtist1] = useState([]);
+  const [artist2, setArtist2] = useState([]);
+  const [artist3, setArtist3] = useState([]);
+  const [artist4, setArtist4] = useState([]);
+  const [artist5, setArtist5] = useState([]);
+
+  const artists = [];
+  artists.push(artist1);
+  artists.push(artist2);
+  artists.push(artist3);
+  artists.push(artist4);
+  artists.push(artist5);
 
   useEffect(() => {
-    setArtists([]);
-    for (let i in list) {
-      getArtistAlbums(artists, i.artist, setArtists);
+    if(list[0]) {
+      getAlbums(list[0], setArtist1);
+      if(list[1]) {
+        getAlbums(list[1], setArtist2);
+        if(list[2]) {
+          getAlbums(list[2], setArtist3);
+          if(list[3]) {
+            getAlbums(list[3], setArtist4);
+            if(list[4]) getAlbums(list[4], setArtist5);
+          }
+        }
+      }
     }
-  }, [list, artists]);
+    
+  }, [list]);
 
   const graph = {
     nodes: [],
@@ -29,35 +50,33 @@ export default function ArtistsGraph({ list }) {
   let cont = 2;
   let artistID = 0;
 
-  if(artists) {
-    for (let i in artists) {
-      artistID = cont;
+  for (let i = 0; i < list.length; i++) {
+    artistID = cont;
+    graph.nodes.push({
+      id: artistID,
+      label: list[i].artist,
+      title: "Artist",
+    });
+    graph.edges.push({
+      from: 1,
+      to: artistID,
+      length: windowScreen >= 700 ? 150 : 80,
+    });
+    
+    cont++;
+
+    for (let j = 0; j < artists[i].length; j++) {
       graph.nodes.push({
-        id: artistID,
-        label: i.artist,
-        title: "Artist",
+        id: cont,
+        label: '',
+        title: artists[i][j].collectionName,
       });
       graph.edges.push({
-        from: 1,
-        to: artistID,
-        length: windowScreen >= 700 ? 250 : 80,
-      });
-      
+        from: artistID,
+        to: cont,
+        length: windowScreen >= 700 ? 100 : 60,
+      }); 
       cont++;
-
-      for (let j in i.albums) {
-        graph.nodes.push({
-          id: cont,
-          label: '',
-          title: j.collectionName,
-        });
-        graph.edges.push({
-          from: artistID,
-          to: cont,
-          length: windowScreen >= 700 ? 250 : 80,
-        }); 
-        cont++;
-      }
     }
   }
 
@@ -69,7 +88,7 @@ export default function ArtistsGraph({ list }) {
     edges: {
       color: "#000000",
     },
-    height: windowScreen >= 700 ? "700px" : "300px",
+    height: windowScreen >= 700 ? "900px" : "300px",
     width: "100%",
     interaction: {
       dragNodes: false,
