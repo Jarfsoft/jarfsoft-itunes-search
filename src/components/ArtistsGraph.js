@@ -60,7 +60,7 @@ export default function ArtistsGraph({ list }) {
     graph.edges.push({
       from: 1,
       to: artistID,
-      length: windowScreen >= 700 ? 150 : 80,
+      length: windowScreen >= 700 ? 100 : 80,
     });
     
     cont++;
@@ -92,7 +92,7 @@ export default function ArtistsGraph({ list }) {
     width: "100%",
     interaction: {
       dragNodes: false,
-      dragView: false,
+      dragView: true,
       zoomView: false,
     },
     nodes: {
