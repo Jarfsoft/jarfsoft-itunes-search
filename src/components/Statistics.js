@@ -33,7 +33,7 @@ export default function Statistics() {
           <h1 className="no-like">Most liked artists will be shown here.</h1>
         )}
       </ol>
-      {list.length !== 0 && <ArtistsGraph list={list} />}
+      {list.length !== 0 && <ArtistsGraph list={list.slice(0, 5)} />}
       </div> 
       : 
       <ol className="graph-list no-like">
